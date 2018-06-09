@@ -1,0 +1,188 @@
+<h2>Modal</h2>
+
+<div class='uk-padding uk-box-shadow-medium uk-margin'>
+
+  {{!-- DIALOG --}}
+  {{#uk-modal modalName='uk-modal' as |modal|}}
+    {{#modal.open}}
+      Dialog
+    {{/modal.open}}
+    {{#modal.dialog}}
+      {{#modal.header}}
+        {{#modal.title}}
+          I'm a Modal!
+        {{/modal.title}}
+      {{/modal.header}}
+      {{#modal.body}}
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      {{/modal.body}}
+      {{#modal.footer class='uk-text-right'}}
+        {{#uk-button class='uk-modal-close'}}Close{{/uk-button}}
+      {{/modal.footer}}
+    {{/modal.dialog}}
+  {{/uk-modal}}
+
+  {{!-- IMAGE --}}
+  {{#uk-modal modalName='image-modal' as |modal|}}
+    {{#modal.open}}
+      Image
+    {{/modal.open}}
+    {{#modal.media}}
+      <img src='https://getuikit.com/docs/images/photo.jpg' alt='example photo' />
+    {{/modal.media}}
+  {{/uk-modal}}
+
+  {{!-- YOUTUBE --}}
+  {{#uk-modal modalName='youtube-modal' as |modal|}}
+    {{#modal.open}}
+      youtube
+    {{/modal.open}}
+    {{#modal.media}}
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/lVehcuJXe6I" frameborder="0" uk-video autoplay=false></iframe>
+    {{/modal.media}}
+  {{/uk-modal}}
+
+</div>
+
+{{#uk-switcher animation='uk-animation-fade' as |switcher|}}
+  {{#switcher.nav type='tab' as |nav|}}
+    {{#nav.component as |tab|}}
+      {{#tab.item}}Options{{/tab.item}}
+      {{#tab.item}}Events{{/tab.item}}
+      {{#tab.item}}Example{{/tab.item}}
+    {{/nav.component}}
+  {{/switcher.nav}}
+
+  {{#switcher.content as |content|}}
+    {{#content.item}}
+      <div class='uk-overflow-auto'>
+        <table class='uk-table uk-table-divider'>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>group</code></td>
+              <td><code>String</code></td>
+              <td><code>''</code></td>
+              <td>The group</td>
+            </tr>
+            <tr>
+              <td><code>animationDuration</code></td>
+              <td><code>Number</code></td>
+              <td><code>150</code></td>
+              <td>The animation duration.</td>
+            </tr>
+            <tr>
+              <td><code>threshold</code></td>
+              <td><code>Number</code></td>
+              <td><code>10</code></td>
+              <td>Mouse move threshold before dragging starts.</td>
+            </tr>
+            <tr>
+              <td><code>clsItem</code></td>
+              <td><code>String</code></td>
+              <td><code>'uk-sortable-item'</code></td>
+              <td>The item class.</td>
+            </tr>
+            <tr>
+              <td><code>clsPlaceholder</code></td>
+              <td><code>String</code></td>
+              <td><code>'uk-sortable-placeholder'</code></td>
+              <td>The placeholder class.</td>
+            </tr>
+            <tr>
+              <td><code>clsDrag</code></td>
+              <td><code>String</code></td>
+              <td><code>'uk-sortable-drag'</code></td>
+              <td>The ghost class.</td>
+            </tr>
+            <tr>
+              <td><code>clsDragState</code></td>
+              <td><code>String</code></td>
+              <td><code>'uk-sortable-dragging'</code></td>
+              <td>The body's dragging class.</td>
+            </tr>
+            <tr>
+              <td><code>clsBase</code></td>
+              <td><code>String</code></td>
+              <td><code>'uk-sortable'</code></td>
+              <td>The list's class.</td>
+            </tr>
+            <tr>
+              <td><code>clsNoDrag</code></td>
+              <td><code>String</code></td>
+              <td><code>'uk-sortable-nodrag'</code></td>
+              <td>Disable dragging on elements with this class.</td>
+            </tr>
+            <tr>
+              <td><code>clsEmpty</code></td>
+              <td><code>String</code></td>
+              <td><code>'uk-sortable-empty'</code></td>
+              <td>The empty list class.</td>
+            </tr>
+            <tr>
+              <td><code>clsCustom</code></td>
+              <td><code>String</code></td>
+              <td><code>''</code></td>
+              <td>The ghost's custom class.</td>
+            </tr>
+            <tr>
+              <td><code>threshold</code></td>
+              <td><code>String</code></td>
+              <td><code>''</code></td>
+              <td>The handle selector.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    {{/content.item}}
+
+    {{#content.item}}
+      <p>
+        The events are named parameters that pass actions.
+      </p>
+
+      <div class='uk-overflow-auto'>
+        <table class='uk-table uk-table-divider'>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>on-start</code></td>
+              <td>Fires after dragging starts.</td>
+            </tr>
+            <tr>
+              <td><code>on-stop</code></td>
+              <td>Fires after dragging stops.</td>
+            </tr>
+            <tr>
+              <td><code>on-moved</code></td>
+              <td>Fires after an element has been moved.</td>
+            </tr>
+            <tr>
+              <td><code>on-added</code></td>
+              <td>Fires after an element has been added.</td>
+            </tr>
+            <tr>
+              <td><code>on-removed</code></td>
+              <td>Fires after an element has been removed.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    {{/content.item}}
+    {{#content.item}}
+      {{code-snippet name='sortable.hbs'}}
+    {{/content.item}}
+  {{/switcher.content}}
+{{/uk-switcher}}
