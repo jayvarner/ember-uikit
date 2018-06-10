@@ -1,8 +1,9 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 import layout from '../templates/components/uk-switcher';
+import SwitcherMixin from 'ember-uikit/mixins/switcher';
 
-export default Component.extend({
+export default Component.extend(SwitcherMixin, {
   layout,
 
   animation: '',
