@@ -12,13 +12,15 @@ export default Mixin.create({
     'connect',
     'animation',
     'animationDuration:duration',
-    'swiping'
+    'swiping',
+    'active'
   ],
 
   contentId: '',
   animation: '',
   animationDuration: 200,
   swiping: false,
+  active: 0,
   ukSwitcher: '',
 
   connect: computed('contentId', function() {
