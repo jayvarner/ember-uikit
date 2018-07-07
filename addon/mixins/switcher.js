@@ -16,15 +16,15 @@ export default Mixin.create({
     'active'
   ],
 
-  contentId: '',
-  animation: '',
+  contentId: "",
+  animation: "",
   animationDuration: 200,
   swiping: false,
   active: 0,
   ukSwitcher: '',
 
-  connect: computed('contentId', function() {
-    let id = this.get('contentId');
+  connect: computed("contentId", function() {
+    let id = this.get("contentId");
 
     return isEmpty(id) ? '' : `#${id}`;
   }),
